@@ -13,50 +13,103 @@
     <div id="app">
         <button @click="Campus[0] = true ">Campus</button>
 
-        <button @click="profesores = true "> profesores </button>
+        <button @click="profesores[0] = true "> profesores </button>
 
-        <button @click="estudiantes = true "> estudiantes </button>
+        <button @click="estudiantes[0] = true "> estudiantes </button>
 
-        <button @click="niveles = true ">niveles </button>
+        <button @click="niveles[0] = true ">niveles </button>
 
-        <button @click="tecnologías = true ">tecnologías</button>
+        <button @click="tecnologías[0] = true ">tecnologías</button>
 
-        <button @click="teams = true ">teams</button>
+        <button @click="teams[0] = true ">teams</button>
 
-        <button @click="roadMap = true ">roadMap </button>
+        <button @click="roadMap[0] = true ">roadMap </button>
 
         <div>
-            <div v-show="Campus[0]"><form>
-                <input type="text"  v-model="Campus[1].nombre" placeholder="nombre">
-                <input type="text" v-model="Campus[1].telefono" placeholder="telefono">
-                <input type="text" v-model="Campus[1].direccion" placeholder="direccion">
-                <button  @click.prevent="addcampus"> agregar</button>
+            <div v-show="Campus[0]">
+                <h1>campus</h1>
+                <form>
+                    <input type="text" v-model="Campus[1].nombre" placeholder="nombre">
+                    <input type="text" v-model="Campus[1].telefono" placeholder="telefono">
+                    <input type="text" v-model="Campus[1].direccion" placeholder="direccion">
+                    <button @click.prevent="addcampus"> agregar</button>
                 </form>
-                {{propiedades.campus}} 
-            
-                <button  @click.prevent="Campus[0] = false">cerrar</button>
+                <div v-for="(items, index) in propiedades.campus">
+                    {{index}} - {{items.nombre}} - {{items.telefono}} - {{items.direccion}}
+                </div>
+                <button @click.prevent="Campus[0] = false">cerrar</button>
             </div>
-            
-            <div v-show="profesores"><form>
-    
-            </form></div>
-            <div v-show="estudiantes"><form>
-    
-            </form></div>
-            <div v-show="niveles"><form>
-    
-            </form></div>
-            <div v-show="tecnologías"><form>
-    
-            </form></div>
-            <div v-show="teams"> <form>
-    
-            </form></div>
-            <div v-show="roadMap"><form>
-    
-            </form></div>
+
+            <div v-show="profesores[0]">
+                <h1>profesores</h1>
+                <form>
+                    <input type="text" v-model="profesores[1].nombre" placeholder="nombre">
+                    <input type="text" v-model="profesores[1].telefono" placeholder="telefono">
+                    <button @click.prevent="addprofesor"> agregar</button>
+                </form>
+
+                <div v-for="(items, index) in propiedades.profesores">
+                    {{index}} - {{items.nombre}} - {{items.telefono}}
+                </div>
+
+                <button @click.prevent="profesores[0] = false">cerrar</button>
+            </div>
+
+            <div v-show="estudiantes[0]">
+                <h1>estudiantes</h1>
+                <form>
+                    <input type="text" v-model="estudiantes[1].nombre" placeholder="nombre">
+                    <input type="text" v-model="estudiantes[1].telefono" placeholder="telefono">
+                    <input type="text" v-model="estudiantes[1].direccion" placeholder="direccion">
+                    <input type="text" v-model="estudiantes[1].nivel" placeholder="estracto">
+                    <input type="text" v-model="estudiantes[1].transporte" placeholder="medio de transporte">
+                    <button @click.prevent="addestu"> agregar</button>
+                </form>
+
+                <div v-for="(items, index) in propiedades.estudiantes">
+                    {{index}} - {{items.nombre}} - {{items.telefono}} - {{items.direccion}} - {{items.estracto}} - {{items.transporte}}
+                </div>
+                <button @click.prevent="estudiantes[0] = false">cerrar</button>
+            </div>
+
+            <div v-show="niveles[0]">
+                <h1>niveles de tecnologías</h1>
+                <form>
+                    <input type="text" v-model="niveles[1].preReq" placeholder="pre requisitos">
+                    <button @click.prevent="addnivel"> agregar</button>
+                </form>
+
+                <div v-for="(items, index) in propiedades.niveles">
+                    {{index}} - {{items.preReq}}
+                </div>
+                <button @click.prevent="niveles[0] = false">cerrar</button>
+            </div>
+
+            <div v-show="tecnologías[0]">
+                <h1>tecnologías</h1>
+                <form>
+                    <input type="text" v-model="tecnologías[1].nombre" placeholder="nombre de la tecnologia">
+                    <button @click.prevent="addtecno"> agregar</button>
+                </form>
+
+                <div v-for="(items, index) in propiedades.tecno">
+                    {{index}} - {{items.preReq}}
+                </div>
+                <button @click.prevent="tecnologías[0] = false">cerrar</button>
+            </div>
+
+            <div v-show="teams[0]">
+                <form>
+
+                </form>
+            </div>
+            <div v-show="roadMap[0]">
+                <form>
+
+                </form>
+            </div>
         </div>
-        </div>
+    </div>
 </body>
 
 </html>

@@ -1,9 +1,9 @@
-[
-        {"campus":[]},
-        {"profesores":[]},
-        {"estudiantes":[]},
-        {"niveles":[]},
-        {"tecnologias":[]},
-        {"teams":[]},
-        {"roadcamp":[]}
-    ]
+{
+        "campus":[],
+        "profesores":[],
+        "estudiantes":[],
+        "niveles":[],
+        "tecnologias":[],
+        "teams":[],
+        "roadcamp":[]
+}
