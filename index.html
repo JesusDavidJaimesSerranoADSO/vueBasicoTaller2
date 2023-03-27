@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" type="module"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="Campus[0] = true ">Campus</button>
+
+        <button @click="profesores = true "> profesores </button>
+
+        <button @click="estudiantes = true "> estudiantes </button>
+
+        <button @click="niveles = true ">niveles </button>
+
+        <button @click="tecnologías = true ">tecnologías</button>
+
+        <button @click="teams = true ">teams</button>
+
+        <button @click="roadMap = true ">roadMap </button>
+
+        <div>
+            <div v-show="Campus[0]"><form>
+                <input type="text"  v-model="Campus[1].nombre" placeholder="nombre">
+                <input type="text" v-model="Campus[1].telefono" placeholder="telefono">
+                <input type="text" v-model="Campus[1].direccion" placeholder="direccion">
+                <button  @click.prevent="addcampus"> agregar</button>
+                </form>
+                {{propiedades.campus}} 
+            
+                <button  @click.prevent="Campus[0] = false">cerrar</button>
+            </div>
+            
+            <div v-show="profesores"><form>
+    
+            </form></div>
+            <div v-show="estudiantes"><form>
+    
+            </form></div>
+            <div v-show="niveles"><form>
+    
+            </form></div>
+            <div v-show="tecnologías"><form>
+    
+            </form></div>
+            <div v-show="teams"> <form>
+    
+            </form></div>
+            <div v-show="roadMap"><form>
+    
+            </form></div>
+        </div>
+        </div>
+</body>
+
+</html>
